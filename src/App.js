@@ -12,7 +12,7 @@ function App() {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch('http://localhost:8080/messages');
+            const response = await fetch('https://api-chat.phuongmychi.vn/v1/messages');
             const data = await response.json();
             setMessages(data);
         } catch (error) {
@@ -30,11 +30,11 @@ function App() {
         if (inputValue.trim() !== '') {
             const message = {
                 content: inputValue,
-                sender: 'User1', // Thay đổi thành người dùng hiện tại nếu cần thiết
+                sender: 'User1', // 
             };
 
             try {
-                await fetch('http://localhost:8080/messages', {
+                await fetch('https://api-chat.phuongmychi.vn/v1/messages', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
