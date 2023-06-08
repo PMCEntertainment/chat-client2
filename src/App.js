@@ -1,7 +1,5 @@
 
-import React, {
-useState,
-    useEffect
+import React, {useState, useEffect
 } from 'react';
 
 function App() {
@@ -51,39 +49,16 @@ function App() {
         }
     };
 
-    return ( <
-            div >
-            <
-            ul > {
-                messages.map((message, index) => ( <
-                        li key = {
-                            index
-                        } >
-                        <
-                        strong > {
-                            message.sender
-                        }: < /strong> {
-                        message.content
-                    } <
-                    /li>
-                ))
-        } <
-        /ul> <
-    form onSubmit = {
-            handleSendMessage
-        } >
-        <
-        input type = "text"
-    value = {
-        inputValue
-    }
-    onChange = {
-        handleInputChange
-    }
-    /> <
-    button type = "submit" > Send < /button> < /
-        form > <
-        /div>
+    return ( <div>
+            <ul>{messages.map((message, index) => (<li key = {index
+                        }>
+                        <strong> {message.sender}: </strong> {message.content
+                    }</li>))} </ul> 
+                    <form onSubmit={handleSendMessage}>
+        <input type="text" value={inputValue} onChange={handleInputChange}/> 
+        <button type="submit"> Send </button> 
+        </form> 
+        </div>
 );
 }
 
